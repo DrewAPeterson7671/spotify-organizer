@@ -1,0 +1,17 @@
+<%= form_with(model: auth, local: true) do |form| %>
+  <% if auth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+
+      <ul>
+      <% auth.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
